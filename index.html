@@ -2,22 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Portfolio Templates Preview</title>
+<title>Portfolio Templates Preview · Inlyt Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
+  margin:0;
   background:#0f172a;
   color:#e5e7eb;
-  font-family:system-ui;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  min-height:100vh;
 }
 .card{
   background:#020617;
-  padding:40px;
-  border-radius:12px;
+  padding:42px;
+  border-radius:14px;
+  max-width:520px;
   text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+h1{
+  margin-bottom:6px;
+}
+p{
+  font-size:14px;
+  color:#cbd5f5;
+  line-height:1.6;
+}
+.links{
+  margin-top:26px;
 }
 a{
   display:block;
@@ -26,16 +42,40 @@ a{
   text-decoration:none;
   font-size:18px;
 }
+a:hover{
+  text-decoration:underline;
+}
+.badge{
+  margin-top:28px;
+  font-size:12px;
+  opacity:.6;
+}
 </style>
 </head>
+
 <body>
   <div class="card">
-    <h1>Preview Templates</h1>
-    <a href="/dev-01/">Dev‑01 · Terminal Portfolio</a>
-    <a href="/dev-06/">Dev‑06 · Futuristic System</a>
-    <p style="margin-top:20px;font-size:12px;opacity:.6">
-      Preview only · Full access in bundle
+    <h1>Template Previews</h1>
+
+    <p>
+      Crafted by <strong>Inlyt Studio</strong> — a digital product studio focused on
+      building modern, production‑ready portfolio templates for developers,
+      designers, and creators.
     </p>
+
+    <p>
+      These previews showcase the design and experience only.
+      Full source code and customization access are included in the paid bundle.
+    </p>
+
+    <div class="links">
+      <a href="/dev-01/">Dev‑01 · Terminal Portfolio</a>
+      <a href="/dev-06/">Dev‑06 · Futuristic System Portfolio</a>
+    </div>
+
+    <div class="badge">
+      🔒 Preview only · Full access available in bundle
+    </div>
   </div>
 </body>
 </html>
