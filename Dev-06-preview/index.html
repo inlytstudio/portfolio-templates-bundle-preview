@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dev‑06 · Futuristic System Portfolio (Preview)</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg: '#070A13',
+        glass: 'rgba(255,255,255,0.06)',
+        border: 'rgba(255,255,255,0.14)',
+        textPrimary: '#E5E7EB',
+        textMuted: '#9CA3AF',
+        accent: '#22D3EE',
+        accent2: '#A78BFA'
+      },
+      fontFamily: {
+        heading: ['Clash Display', 'sans-serif'],
+        body: ['General Sans', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace']
+      }
+    }
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=General+Sans:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/clash-display" rel="stylesheet">
+
+<style>
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34,211,238,.12), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(167,139,250,.12), transparent 40%);
+  z-index:-2;
+}
+.glass{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.14);
+}
+.glow{transition:.35s}
+.glow:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 55px rgba(34,211,238,.4)
+}
+.reveal{opacity:0;transform:translateY(24px);transition:.9s}
+.reveal.visible{opacity:1;transform:none}
+#progress{height:2px;background:#22D3EE;position:fixed;top:0;left:0;z-index:999}
+</style>
+</head>
+
+<body class="bg-bg text-textPrimary font-body">
+
+<!-- PREVIEW BANNER -->
+<div class="fixed top-0 left-0 right-0 z-[9999]
+            bg-black/70 backdrop-blur
+            text-center text-xs py-2 font-mono">
+   Preview Only — Full Template Available in Bundle
+</div>
+
+<!-- WATERMARK -->
+<div class="fixed bottom-4 right-4 text-xs opacity-50 font-mono z-[9999]">
+  Dev‑06 · Preview
+</div>
+
+<div id="progress"></div>
+
+<main class="max-w-6xl mx-auto px-6 py-28 space-y-32">
+
+<!-- HERO -->
+<section class="flex justify-center reveal">
+  <div class="glass glow rounded-3xl p-10 text-center space-y-6 max-w-xl">
+    <img src="assets/profile.jpg"
+      class="w-28 h-28 mx-auto rounded-full ring-2 ring-accent object-cover"/>
+    <h1 class="text-5xl font-heading">Your Name</h1>
+    <p class="text-textMuted">Software Engineer • Backend & Systems</p>
+    <div class="flex justify-center gap-6 text-sm">
+      <a onclick="previewAlert()" class="hover:text-accent cursor-pointer">GitHub</a>
+      <a onclick="previewAlert()" class="hover:text-accent cursor-pointer">LinkedIn</a>
+      <a onclick="previewAlert()" class="hover:text-accent cursor-pointer">Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM STATUS -->
+<section class="flex justify-center reveal">
+  <div class="glass rounded-full px-8 py-3 font-mono text-sm flex gap-6">
+    <span class="flex gap-2 items-center">
+      <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+      STATUS: ACTIVE
+    </span>
+    <span>MODE: EXPERIMENTAL</span>
+    <span id="lastUpdated">UPDATED: —</span>
+  </div>
+</section>
+
+<!-- SYSTEM DNA -->
+<section class="space-y-6 reveal text-center">
+  <h2 class="text-4xl font-heading">System DNA</h2>
+  <p class="text-textMuted max-w-2xl mx-auto">
+    This system is designed around clarity, performance, and long‑term maintainability.
+  </p>
+  <div class="flex justify-center flex-wrap gap-4 font-mono text-sm">
+    <span class="glass px-4 py-2 rounded-full">Design → Code</span>
+    <span class="glass px-4 py-2 rounded-full">Systems over Features</span>
+    <span class="glass px-4 py-2 rounded-full">Performance First</span>
+    <span class="glass px-4 py-2 rounded-full">Production Mindset</span>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="space-y-12 reveal">
+<h2 class="text-4xl font-heading text-center">Experience</h2>
+
+<div class="glass glow rounded-3xl p-8 space-y-4">
+  <span class="font-mono text-accent text-sm">2023 — Present</span>
+  <h3 class="text-2xl font-semibold">Software Engineer — Company</h3>
+  <p class="text-textMuted text-sm">
+    Building scalable backend systems powering real‑world products.
+  </p>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section class="space-y-12 reveal">
+<h2 class="text-4xl font-heading text-center">Projects</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+  <div class="glass glow rounded-3xl p-6 space-y-3">
+    <h3 class="text-xl font-semibold">SaaS Backend Platform</h3>
+    <p class="font-mono text-xs text-textMuted">SYSTEM: ACTIVE</p>
+    <p class="text-textMuted text-sm">Auth, billing, RBAC, cloud deployment.</p>
+    <a onclick="previewAlert()" class="hover:text-accent cursor-pointer text-sm">View</a>
+  </div>
+
+  <div class="glass glow rounded-3xl p-6 space-y-3">
+    <h3 class="text-xl font-semibold">High‑Performance API</h3>
+    <p class="font-mono text-xs text-textMuted">SYSTEM: STABLE</p>
+    <p class="text-textMuted text-sm">Optimized REST API with caching.</p>
+    <a onclick="previewAlert()" class="hover:text-accent cursor-pointer text-sm">View</a>
+  </div>
+</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="space-y-8 reveal">
+<h2 class="text-4xl font-heading text-center">Certifications</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+  <div class="glass glow rounded-3xl p-6">
+    <h3 class="font-semibold">AWS Certified Developer</h3>
+    <p class="text-textMuted text-sm">Amazon Web Services</p>
+    <a onclick="previewAlert()" class="text-accent text-sm cursor-pointer">
+      View Certificate →
+    </a>
+  </div>
+  <div class="glass glow rounded-3xl p-6">
+    <h3 class="font-semibold">Google Cloud Associate</h3>
+    <p class="text-textMuted text-sm">Google Cloud</p>
+    <a onclick="previewAlert()" class="text-accent text-sm cursor-pointer">
+      View Certificate →
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- VOLUNTEER -->
+<section class="space-y-8 reveal">
+<h2 class="text-4xl font-heading text-center">Volunteer Experience</h2>
+<div class="glass glow rounded-3xl p-6">
+  <span class="font-mono text-accent text-sm">2023</span>
+  <h3 class="font-semibold">Technical Lead</h3>
+  <p class="text-textMuted text-sm">Coding Club · University</p>
+  <p class="text-textMuted text-sm">
+    Mentored juniors & led backend workshops.
+  </p>
+</div>
+</section>
+
+</main>
+
+<footer class="mt-32 py-14 border-t border-border text-center font-mono text-sm text-textMuted">
+  SYSTEM STATUS: PREVIEW MODE
+</footer>
+
+<script>
+/* progress */
+window.addEventListener("scroll",()=>{
+  const h=document.body.scrollHeight-innerHeight;
+  progress.style.width=`${(scrollY/h)*100}%`
+});
+
+/* reveal */
+const obs=new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add("visible")));
+document.querySelectorAll(".reveal").forEach(r=>obs.observe(r));
+
+/* last update */
+lastUpdated.innerText="UPDATED: "+(Math.floor(Math.random()*4)+1)+" days ago";
+
+/* preview alert */
+function previewAlert(){
+  alert("This is a preview. Purchase the bundle for full access.");
+}
+
+/* protection */
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+document.addEventListener('copy',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)||e.key==="F12") e.preventDefault();
+});
+</script>
+
+</body>
+</html>
